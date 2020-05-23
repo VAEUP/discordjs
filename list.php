@@ -10,7 +10,8 @@ if (!empty($_GET['number'])) {
 
     if ($numberexist != 0) {
         $number = $reqnumber->fetch();
-        echo $number;
+
+        echo $number['name'].'*'.$number['website'].'*'.$number['numbers'].'*'.$number['email'].'*'.$number['other_name'];
     } else {
         echo "Error";
     }
