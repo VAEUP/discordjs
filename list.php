@@ -4,7 +4,7 @@ if (!empty($_GET['number'])) {
     
     $number = htmlspecialchars($_GET['number']);
 
-    $reqnumber = $bdd->prepare("SELECT * FROM scam_incs WHERE numbers = ?");
+    $reqnumber = $bdd->prepare("SELECT * FROM scam_incs WHERE numbers LIKE CONCAT(?, '%')");
     $reqnumber->execute(array($number));
     $numberexist = $reqnumber->rowCount();
 
